@@ -38,29 +38,92 @@ a {
 pre {
     font-weight: lighter;
 }
+
+#footer {
+    position: fixed; /* Фиксированное положение */
+    left: 0; bottom: 0; /* Левый нижний угол */
+    padding: 10px; /* Поля вокруг текста */
+    background: #536a94; /* Цвет фона */
+    color: #fff; /* Цвет текста */
+    width: 100%; /* Ширина слоя */
+   }
+
+
 </style>
 
 
 
 <body>
     <div class="container">
-        <pre><p style="font-weight: bold;">code</p><hr><div style="margin-left: 1%;">import i4ego
+        <pre><p style="font-weight: bold;">code</p><hr><div style="margin-left: 1%;">
+import i4ego
 <a href="/">
 def goBack():
     """Tap Me To Go Back"""
     raise GoBack
 </a> 
 
-print(i4ego.name)
-print(i4ego.hobby)</div>
-<hr><p style="font-weight: bold;">output<br><button>Run</button></p><hr><div style="margin-left: 1%;">Felix Bogomolov
-Programming</div>
-        </pre>
+me = i4ego.Me()
+
+me.name = "Felix Bogomolov"
+me.nickname = "i4ego"
+me.hobby = "Programming"
+me.langulages = ["Java", "Python", "Arduino C++", "Unity C#", "Roblox Lua"]
+me.mail = "me@i4ego.ru"
+me.github = "https://github.com/i4ego/"
+me.telegram = "@the_i4ego"
+
+
+print(f"Name: {me.name}")
+print(f"Hobby: {me.hobby}")
+
+print(f"\n{me.nickname} coding on ")
+for lang in me.langulages:
+    print(lang, end=" | ")
+print()
+
+print(f"from best to bad: ")
+me.langulages.sort()
+for lang in me.langulages:
+    print(lang, end=" | ")
+print()
+
+links = \
+"""\
+Mail: {0}
+GitHub: {1}\
+Telegram: {2}
+"""
+
+print(links.format(me.mail, me.github, me.telegram))
+</div>
+<hr><p style="font-weight: bold;">output</p><hr><div style="margin-left: 1%;">
+Nickname: i4ego
+Name: Felix Bogomolov
+Hobby: Programming
+
+i4ego coding on Java | Python | Arduino C++ | Unity C# | Roblox Lua |
+from best to bad: Python | Java | Roblox Lua | Unity C# | Arduino C++ |
+
+Mail: <a href="mailto:me@i4ego.ru" target="_blank">me@i4ego.ru</a>
+GitHub: <a href="https://github.com/i4ego" target="_blank">https://github.com/i4ego</a>
+Telegram: <a href="https://t.me/the_i4ego" target="_blank">@the_i4ego</a>
+<div class="footer"><p>
+Enter to exit: █
+</p></div>
+</div></pre>
     </div>
 </body>
 
 
 <script>
+
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        document.location.href = '/';
+    }
+});
+
   const left = document.getElementById("left-side");
 
 const handleMove = e => {
