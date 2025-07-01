@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+</head>
+<style>
+  body {
+    font-weight: 600;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: white;
+  }
+
+  :root {
+  --dark: rgb(20, 20, 20);
+  --yellow: rgb(253, 216, 53);
+  --blue: rgb(98, 0, 234);
+  
+  --c1: rgb(3, 7, 18);
+  --c2: rgb(163, 230, 53);
+  
+  --left-color: var(--c1);
+  --right-color: var(--c2);
+}
+
+body {  
+  background-color: var(--dark);
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+pre {
+    font-weight: lighter;
+}
+</style>
+
+
+
+<body>
+    <div class="container">
+        <pre><p style="font-weight: bold;">code</p><hr><div style="margin-left: 1%;">import i4ego
+<a href="/">
+def goBack():
+    """Tap Me To Go Back"""
+    raise GoBack
+</a> 
+
+print(i4ego.name)
+print(i4ego.hobby)</div>
+<hr><p style="font-weight: bold;">output<br><button>Run</button></p><hr><div style="margin-left: 1%;">Felix Bogomolov
+Programming</div>
+        </pre>
+    </div>
+</body>
+
+
+<script>
+  const left = document.getElementById("left-side");
+
+const handleMove = e => {
+  left.style.width = `${e.clientX / window.innerWidth * 100}%`;
+}
+
+document.onmousemove = e => handleMove(e);
+
+document.ontouchmove = e => handleMove(e.touches[0]);
+</script>
+</html>
